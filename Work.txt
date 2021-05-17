@@ -1,1 +1,8 @@
-Welcome to java file IO problem
+
+First name: Atharva
+Last name: Joshi
+Phone number: 9665654666
+Address: Sagar park
+City: Jalgaon
+State: MH
+zip: 425001
