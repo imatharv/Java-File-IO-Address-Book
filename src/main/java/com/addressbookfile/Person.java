@@ -1,7 +1,6 @@
-package com.work;
+package com.addressbookfile;
 
 import java.util.*;
-import java.lang.*;
 
 public class Person {
     public final String firstName; // Can't be edited so private and final

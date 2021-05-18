@@ -1,9 +1,7 @@
-package com.work;
+package com.addressbookfile;
 
-import java.nio.file.Files;
 import java.util.*;
 import java.io.*;
-import java.lang.*;
 import java.util.stream.Collectors;
 
 public class Function {
@@ -105,7 +103,7 @@ public class Function {
         }
     }
     public void getBookFileDataTxt(String bookName) throws FileNotFoundException {
-        File directory = new File("C:\\Users\\iamat\\Desktop\\java-address-book - File-IO\\resources");
+        File directory = new File("C:\\Users\\iamat\\Desktop\\java-address-book-file-IO\\resources");
         String fileName = bookName;
         File myTxtFile = new File(directory,fileName +".txt");
         if (myTxtFile.exists()) {
