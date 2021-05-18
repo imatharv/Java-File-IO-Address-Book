@@ -7,20 +7,9 @@ import java.util.stream.Collectors;
 public class Function {
 
     ArrayList<Person> records = new ArrayList<Person>();
-
-    public void createBook(String bookName, HashMap<String, ArrayList<Person>> addressBooks) {
-        Scanner scanner = new Scanner(System.in);
-        if(addressBooks.containsKey(bookName)) {
-            System.out.println("Address book with the same name already exist.");
-            System.out.println("Provide different name: ");
-            bookName = scanner.nextLine();
-            addressBookCheck(addressBooks, bookName);
-        }
-        else
-            addressBooks.put(bookName, new ArrayList<Person>());
-    }
+    
     public int fileCheck(String bookName) {
-        File directory = new File("C:\\Users\\iamat\\Desktop\\java-address-book - File-IO\\resources");
+        File directory = new File("C:\\Users\\iamat\\eclipse-workspace\\java-address-book-file-IO\\resources");
         if(!directory.exists()){
             return -1;
         }
@@ -36,7 +25,7 @@ public class Function {
     }
     public void createBookFileTxt(String bookName) {
         try {
-            File directory = new File("C:\\Users\\iamat\\Desktop\\java-address-book - File-IO\\resources");
+            File directory = new File("C:\\Users\\iamat\\eclipse-workspace\\java-address-book-file-IO\\resources");
             if(!directory.exists()){
                 directory.mkdir();
             }
@@ -55,7 +44,7 @@ public class Function {
     }
     public void writeBookFileTxt(String bookName, Person person) {
         try {
-            File directory = new File("C:\\Users\\iamat\\Desktop\\java-address-book - File-IO\\resources");
+            File directory = new File("C:\\Users\\iamat\\eclipse-workspace\\java-address-book-file-IO\\resources");
             if(!directory.exists()){
                 System.out.println("Specified directory does not exists.");
             }
@@ -90,7 +79,7 @@ public class Function {
         }
     }
     public void showBookFiles() {
-        File directory = new File("C:\\Users\\iamat\\Desktop\\java-address-book - File-IO\\resources");
+        File directory = new File("C:\\Users\\iamat\\eclipse-workspace\\java-address-book-file-IO\\resources");
         if (directory.exists()) {
             File filesList[] = directory.listFiles();
             System.out.println("List of files in the specified directory (./resources):");
@@ -103,7 +92,7 @@ public class Function {
         }
     }
     public void getBookFileDataTxt(String bookName) throws FileNotFoundException {
-        File directory = new File("C:\\Users\\iamat\\Desktop\\java-address-book-file-IO\\resources");
+        File directory = new File("C:\\Users\\iamat\\eclipse-workspace\\java-address-book-file-IO\\resources");
         String fileName = bookName;
         File myTxtFile = new File(directory,fileName +".txt");
         if (myTxtFile.exists()) {
@@ -116,14 +105,5 @@ public class Function {
         } else {
             System.out.println("Address book with name "+ myTxtFile.getName() +" is not exists.");
         }
-    }
-    public int addressBookCheck(HashMap<String, ArrayList<Person>> addressBooks, String addressBookName) {
-        if(addressBooks.containsKey(addressBookName))
-            return 1;
-        else
-            return 0;
-    }
-    public void editAddressBook(HashMap<String, ArrayList<Person>> addressBooks, String addressBookName) {
-        ArrayList<Person> records = addressBooks.get(addressBookName);
     }
 }
